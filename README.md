@@ -1,58 +1,39 @@
-from PIL import Image
+# 🔐 Caesar Cipher - Python
 
-def encrypt_image(image_path, key, output_path):
-    img = Image.open(image_path)
-    pixels = img.load()
+A simple Python program to encrypt and decrypt text using the Caesar Cipher algorithm.
 
-    for i in range(img.width):
-        for j in range(img.height):
-            r, g, b = pixels[i, j]
+---
 
-            
-            r = (r + key) % 256
-            g = (g + key) % 256
-            b = (b + key) % 256
+## 📌 About Project
 
-            pixels[i, j] = (r, g, b)
+This project allows users to:
+- Encrypt a message
+- Decrypt a message
+- Enter custom shift values
 
-    img.save(output_path)
-    print("Image encrypted and saved as", output_path)
+It is a beginner-friendly cryptography project built using Python.
 
+---
 
-def decrypt_image(image_path, key, output_path):
-    img = Image.open(image_path)
-    pixels = img.load()
+## 🚀 How It Works
 
-    for i in range(img.width):
-        for j in range(img.height):
-            r, g, b = pixels[i, j]
+The Caesar Cipher shifts each letter in the message by a given number (shift value).
 
-            
-            r = (r - key) % 256
-            g = (g - key) % 256
-            b = (b - key) % 256
+Example:
+Message: HELLO  
+Shift: 3  
+Encrypted: KHOOR
 
-            pixels[i, j] = (r, g, b)
+---
 
-    img.save(output_path)
-    print("Image decrypted and saved as", output_path)
+## 🛠️ Technologies Used
 
+- Python
 
+---
 
+## ▶️ How to Run
 
-print("1. Encrypt Image")
-print("2. Decrypt Image")
-
-choice = input("Enter choice (1/2): ")
-key = int(input("Enter key (number): "))
-
-if choice == "1":
-    path = input("Enter image path: ")
-    encrypt_image(path, key, "encrypted.png")
-
-elif choice == "2":
-    path = input("Enter encrypted image path: ")
-    decrypt_image(path, key, "decrypted.png")
-
-else:
-    print("Invalid choice")
+1. Install Python
+2. Download the file `caesar_cipher.py`
+3. Run the file:
